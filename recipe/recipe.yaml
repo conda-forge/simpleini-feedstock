@@ -1,5 +1,5 @@
 context:
-  version: "4.25"
+  version: "4.26"
 
 package:
   name: simpleini
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/brofield/simpleini/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 10001ee1486ae55259a5408786262bc0f72d699bc9637d536ebc62765d3ecd3b
+  sha256: cfb27ba82570d73ce89d956f15c558d4a79c7ce2ad667a104be2d2f0f12be0cb
 
 build:
   number: 0
@@ -15,7 +15,7 @@ build:
 requirements:
   build:
     - ${{ compiler('cxx') }}
-    - ${{ stdlib('c') }}  
+    - ${{ stdlib('c') }}
     - cmake
     - ninja
 
@@ -24,7 +24,7 @@ tests:
       include:
         - SimpleIni.h
   - script:
-    - cmake-package-check SimpleIni
+      - cmake-package-check SimpleIni
     requirements:
       run:
         - cmake-package-check
